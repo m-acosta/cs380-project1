@@ -35,17 +35,16 @@ public class ChatClient {
 			
 			// Any further lines sent will be broadcast to all connected clients
 			// with a time stamp and the sender's user name via a separate thread
-			/* Runnable readAndDisplay = () -> {
+			Runnable readAndDisplay = () -> {
 				try {
 					System.out.println(inputStream.readUTF());
 				} catch (Exception e) {
 					System.out.println(e);
 				}
 			};
-
 			// Creates and starts thread
 			Thread readAndDisplayThread = new Thread(readAndDisplay);
-			readAndDisplayThread.start(); */
+			readAndDisplayThread.start();
 			
 			String temp;
 			while (true) {
@@ -54,7 +53,6 @@ public class ChatClient {
 					break;
 				}
 				outputStream.writeUTF(temp);
-				System.out.println(inputStream.readUTF());
 			}
 			
 			// Close all open objects
